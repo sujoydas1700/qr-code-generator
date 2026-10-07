@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 316px;
+            height: 215px;
+            border: 2px solid black;
+            margin: 100px auto;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .b a {
+            display: block;
+            width: 220px;
+            padding: 18px 20px;
+
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            background-color: skyblue;
+
+            border-radius: 8px;
+            font-size: 18px;
+
+            transition: 0.3s;
+        }
+
+        .b a:hover {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <div class="b box1">
+            <a href="/details">Fill your details</a>
+        </div>
+
+        <div class="b box2">
+            <a href="/data">Give your data</a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

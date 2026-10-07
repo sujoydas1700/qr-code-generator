@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Details</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef3f2;
+
+            padding: 30px 12px;
+
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: min(100%, 500px);
+
+            margin: 0 auto;
+
+            padding: 30px;
+
+            background-color: white;
+
+            border: 1px solid #d7e0de;
+            border-radius: 12px;
+
+            box-shadow: 0 8px 24px rgba(31, 53, 49, 0.08);
+        }
+
+
+        h2 {
+            text-align: center;
+
+            margin-bottom: 25px;
+
+            color: #1f3531;
+
+            font-size: 26px;
+        }
+
+
+        .field {
+            width: 100%;
+
+            margin-bottom: 16px;
+
+            min-width: 0;
+        }
+
+
+        label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-weight: bold;
+
+            color: #263b38;
+        }
+
+
+        input,
+        select,
+        textarea {
+
+            display: block;
+
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+
+            padding: 12px;
+
+            font-size: 16px;
+            font-family: inherit;
+
+            border: 1px solid #999;
+            border-radius: 6px;
+
+            background-color: white;
+        }
+
+
+        textarea {
+
+            min-height: 110px;
+
+            resize: vertical;
+        }
+
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+
+            outline: none;
+
+            border-color: #167c72;
+
+            box-shadow: 0 0 0 3px rgba(22, 124, 114, 0.14);
+        }
+
+
+        button {
+
+            display: block;
+
+            width: 100%;
+            max-width: 100%;
+
+            margin-top: 22px;
+
+            padding: 13px 20px;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            border: none;
+            border-radius: 7px;
+
+            background-color: #167c72;
+
+            color: white;
+
+            cursor: pointer;
+
+            transition: background-color 0.2s ease;
+        }
+
+
+        button:hover {
+
+            background-color: #11665e;
+        }
+
+
+        /* Mobile */
+
+        @media (max-width: 480px) {
+
+            body {
+
+                padding: 15px 10px;
+            }
+
+
+            .container {
+
+                width: 100%;
+
+                padding: 22px 16px;
+
+                border-radius: 10px;
+            }
+
+
+            h2 {
+
+                font-size: 22px;
+
+                margin-bottom: 20px;
+            }
+
+
+            .field {
+
+                margin-bottom: 14px;
+            }
+
+
+            input,
+            select,
+            textarea {
+
+                padding: 12px;
+
+                font-size: 16px;
+            }
+
+
+            textarea {
+
+                min-height: 100px;
+            }
+
+
+            button {
+
+                margin-top: 18px;
+
+                padding: 14px 16px;
+            }
+        }
+
+
+        /* Very small phones */
+
+        @media (max-width: 360px) {
+
+            body {
+
+                padding: 10px 8px;
+            }
+
+
+            .container {
+
+                padding: 18px 12px;
+            }
+
+
+            h2 {
+
+                font-size: 20px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="container">
+
+
+        <h2>Fill Your Details</h2>
+
+
+        <form action="/details" method="POST">
+
+
+            <div class="field">
+
+                <label for="name">Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="phone">Phone</label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                    required
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="email">Email</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="age">Age</label>
+
+                <input
+                    type="number"
+                    id="age"
+                    name="age"
+                    placeholder="Enter your age"
+                    min="1"
+                    max="120"
+                    required
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="blood_group">Blood Group</label>
+
+                <select
+                    id="blood_group"
+                    name="blood_group"
+                    required
+                >
+
+                    <option value="">Select Blood Group</option>
+
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="address">Address</label>
+
+                <textarea
+                    id="address"
+                    name="address"
+                    placeholder="Enter your address"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="profession">Profession</label>
+
+                <input
+                    type="text"
+                    id="profession"
+                    name="profession"
+                    placeholder="Enter your profession"
+                    required
+                >
+
+            </div>
+
+
+            <button type="submit">
+                Generate QR Code
+            </button>
+
+
+        </form>
+
+
+    </div>
+
+
+</body>
+
+</html>
